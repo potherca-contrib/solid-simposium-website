@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" data-simply-field="meta description" content="Solid Symposium">
+    <meta name="author" data-simply-field="meta author" content="Muze B.V.">
+    <meta name="robots" data-simply-field="meta robots" content="index, follow">
+
+    <title data-simply-field="meta title">Solid Symposium </title>
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css" />
+
+    <!-- Component CSS -->
+    <style>
+      {{componentCss}}
+    </style>
+    <!-- /Component CSS -->
+    <!-- Page CSS -->
+    <style>
+      {{pageCss}}
+    </style>
+    <!-- /Page CSS -->
+    <!-- Head HTML -->
+    {{headHtml}}
+    <!-- /Head HTML -->
+    <script>
+      var simplyDataApi = {};
+      var simplyApp = {};
+      window.addEventListener("simply-content-loaded", function() {
+        simply.bind = false;
+        /* Raw API */
+        var simplyRawApi = {
+          {{rawApi}}
+                              };
+                              /* End of Raw API */
+                              /* Data API */
+                              simplyDataApi = {
+                              {{dataApi}}
+      };
+      /* End of Data API */
+      simplyApp = simply.app({
+        /* Actions */
+        actions: {
+          {{actions}}
+                             },
+                             /* /Actions */
+                             /* Commands */
+                             commands: {
+                             {{commands}}
+      },
+        /* /Commands */
+        /* Routes */
+        routes: {
+          {{routes}}
+        }
+      /* /Routes */
+      });
+      });
+      function clone(ob) {
+        return JSON.parse(JSON.stringify(ob));
+      }
+      function updateDataSource(name) {
+        document.querySelectorAll('[data-simply-data="'+name+'"]').forEach(function(list) {
+          editor.list.applyDataSource(list, name);
+          list.dataBindingPaused = 0;
+        });
+      }
+    </script>
+  </head>
+
+  <body id="page-top" class="landing is-loading">
+
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+      <!-- Body HTML -->
+      {{bodyHtml}}
+      <!-- /Body HTML -->
+      <!-- Component HTML templates -->
+      {{componentTemplates}}
+
+      <!-- /Component HTML templates -->
+      <header data-simply-path="/">
+        <simply-render rel="header"></simply-render>
+      </header>
+
+      <section id="banner">
+        <div class="inner">
+          <h2 data-simply-field="banner title">Spectral</h2>
+          <p data-simply-field="banner description">Another fine responsive<br>
+            site template freebie<br>
+            crafted by <a href="http://html5up.net">HTML5 UP</a>.</p>
+          <ul class="actions">
+            <li><a href="#" class="button special" data-simply-field="banner button">Activate</a></li>
+          </ul>
+        </div>
+        <a href="#one" class="more scrolly" data-simply-field="banner link">Learn More</a>
+      </section>
+
+      <div class="sections" data-simply-list="sections" data-simply-sortable>
+        <template data-simply-template="Icons" data-simply-template-icon="fa-diamond">
+          <section id="one" class="wrapper style1 special">
+            <div class="inner">
+              <header class="major">
+                <h2 data-simply-field="section one title">Arcu aliquet vel lobortis ata nisl<br />
+                  eget augue amet aliquet nisl cep donec</h2>
+                <p data-simply-field="section one description">Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
+                  fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
+              </header>
+
+              <ul class="icons major" data-simply-list="section one icons" data-simply-sortable>
+                <template data-simply-template="Diamond" rel="Diamond"></template>
+                <template data-simply-template="Heart" rel="Heart"></template>
+                <template data-simply-template="Code" rel="Code"></template>
+              </ul>
+            </div>
+          </section>
+        </template>
+        <template data-simply-template="Spotlight" data-simply-template-icon="fa-sun-o"></template>
+        <template data-simply-template="Features" data-simply-template-icon="fa-check-square-o"></template>
+      </div>
+
+      <div class="main" data-simply-field="page" data-simply-content="template">
+
+        <!-- Page HTML templates -->
+        {{pageTemplates}}
+        <!-- /Page HTML templates -->
+      </div>
+      <script src="assets/js/simply.everything.js"></script>
+      <script src="assets/js/simply-edit.js" data-api-key=""></script>
+      <script>
+        /* Transformers */
+        editor.transformers = {
+          {{transformers}}
+        };
+        /* /Transformers */
+      </script>
+      <script>
+        /* Sorters */
+        editor.sorters = {
+          {{sorters}}
+        };
+        /* /Sorters */
+      </script>
+      <script>
+        window.addEventListener("simply-content-loaded", function() {
+          /* Data sources */
+          {{dataSources}}
+          /* /Data sources */
+        });
+      </script>
+      <!-- Foot HTML -->
+      {{footHtml}}
+
+      <section data-simply-field="footer" data-simply-content="template" data-simply-default-value="footer">
+        <template data-simply-template='footer' rel="footer"></template>
+      </section>
+      <!-- /Foot HTML -->
+      <!-- jQuery -->
+      <script src="/assets/vendor/jquery/jquery.min.js"></script>
+      <script src="/assets/js/jquery.scrollex.min.js"></script>
+      <script src="/assets/js/jquery.scrolly.min.js"></script>
+
+      <!-- Bootstrap Core JavaScript -->
+      <script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+      <!-- Plugin JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" integrity="sha384-mE6eXfrb8jxl0rzJDBRanYqgBxtJ6Unn4/1F7q4xRRyIw7Vdg9jP4ycT7x1iVsgb" crossorigin="anonymous"></script>
+
+      <!-- Contact Form JavaScript -->
+      <script src="/assets/js/jqBootstrapValidation.js"></script>
+      <script src="/assets/js/contact_me.js"></script>
+
+      <!-- Agency Theme JavaScript -->
+      <script src="/assets/js/agency.js"></script>
+      <script src="/assets/js/simplyedit-helper.js"></script>
+
+      <!-- SimplyDomain Theme JavaScript -->
+      <script src="/assets/js/skel.min.js"></script>
+      <script src="/assets/js/util.js"></script>
+      <script src="/assets/js/main.js"></script>
+      <script src="/assets/js/settings.js"></script>
+
+    </div>
+  </body>
+</html>
